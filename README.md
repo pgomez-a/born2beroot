@@ -51,8 +51,19 @@ Estabilidad | 10/10 | 9.5/10
 Caso específico | Crear OS libre que puede ser instalado en casi todos los hardware y con gran estabilidad | Administrar un sistema con las ventajas que RHEL ofrece
 
 ### Diferencias entre apt y aptitude
+Tanto apt como aptitude son dos herramientas muy útiles a la hora de gestionar paquetes. Ambos son capaces de realizar las funciones más básica de un administrador de paquetes, tales como instalaciones, eliminaciones, búsquedas, etc. Sin embargo, pese a estas grandes similitudes, hay ciertos aspectos en los cuales difieren, pudiendo elegir entre uno u otro a la hora de realizar una tarea específica.
+<ul>
+   <li>Apt (Advanced Packaging Tool): programa de software libre que gestiona tanto la instalación como la eliminación de programas. En un primer momento, fue diseñado para Debian (paquetes con formato .deb), pero al final se ha hecho compativle con el administrador de paquetes RPM. Por otro lado, apt se utiliza por línea de comandos sin una interfaz gráfica (GUI). Cuadno instala un paquete, instala también todas las dependencias necesarias para que dicho paquete puede ejecutarse de forma satisfactoria.</li>
+   <li>Aptitude: herramiento de gestión de paquetes avanzada que proporciona una interfaz de usuario, permitiendo a un usuario instalar, eliminar o buscar un paquete de forma interactiva. Inicialmente también se creo para Debian. Así, aptitude es un programa de alto nivel que hace más sencillo la gestión de paquetes que con apt, siendo este ultimo considerado como un programa de bajo nivel.</li>
+   <li>Diferencias: aptitude incluye un contenido más extenso que apt. Incluye tanto funcionalidades de apt-get como de otras variantes tales como apt-mark o apt-cache. Mientras que aptitude es un programa de alto-nivel y ofrece una GUI, apt es un programa de bajo-nivel que se utiliza desde la línea de comandos. Por otro lado, el administrador de paquetes de aptitude es mejor que el de apt.
+</ul>
 
 ### ¿Qué es KDump, SELinux y AppArmor?
+KDump: característica del núcleo de Linux que crea volcados de memoria en el caso de una falla catastrófica del kernel. Cuando se activa, Kdump exporta una imagen de memoria que se puede analizar con el fin de depurar y determinar la causa de un bloqueo.
+
+SELinux: arquitectura de seguridad para los sistemas Linux que otorga a los administradores mayor control sobre las personas que pueden acceder al sistema. SELinux define los controles de acceso para las aplicaciones, los procesos y los archivos dentro de un sistema. Utiliza las políticas de seguridad, que consisten en un conjunto de reglas que indican a SELinux a qué se puede acceder. Cuando una aplicación o un proceso, conocidos como sujetos, soilicitan acceso a algún objeto (como un archivo), SELinux consulta la caché del vector de acceso (vector dónde se almacenan los permisos de los objetos y de los sujetos). En caso de no poder tomar una decisión en función de los permisos indicados, SELinux enva al servidor de seguridad la petición, que analiza el contexto de seguirdad tanto del objeto como del sujeto.
+
+AppArmor: modulo de seguridad del kernel de Linux que permite al administrador del sistema restringir las capacidades de un programa. Para definir las restricciones asocia a cada programa un perfil de seguridad. Este perfil puede ser creado manual o automáticamente. Complementa el modelo tradicinal de control de acceso discrecional de Unix (DAC) proporcionando el control de acceso obligario (MAC). En definitiva, es similar a SELinux.
 
 ### ¿Qué es una partición?
 
