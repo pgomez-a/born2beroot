@@ -63,11 +63,25 @@ KDump: característica del núcleo de Linux que crea volcados de memoria en el c
 
 SELinux: arquitectura de seguridad para los sistemas Linux que otorga a los administradores mayor control sobre las personas que pueden acceder al sistema. SELinux define los controles de acceso para las aplicaciones, los procesos y los archivos dentro de un sistema. Utiliza las políticas de seguridad, que consisten en un conjunto de reglas que indican a SELinux a qué se puede acceder. Cuando una aplicación o un proceso, conocidos como sujetos, soilicitan acceso a algún objeto (como un archivo), SELinux consulta la caché del vector de acceso (vector dónde se almacenan los permisos de los objetos y de los sujetos). En caso de no poder tomar una decisión en función de los permisos indicados, SELinux enva al servidor de seguridad la petición, que analiza el contexto de seguirdad tanto del objeto como del sujeto.
 
-AppArmor: modulo de seguridad del kernel de Linux que permite al administrador del sistema restringir las capacidades de un programa. Para definir las restricciones asocia a cada programa un perfil de seguridad. Este perfil puede ser creado manual o automáticamente. Complementa el modelo tradicinal de control de acceso discrecional de Unix (DAC) proporcionando el control de acceso obligario (MAC). En definitiva, es similar a SELinux.
+AppArmor: modulo de seguridad del kernel de Linux que permite al administrador del sistema restringir las capacidades de un programa. Para definir las restricciones asocia a cada programa un perfil de seguridad. Este perfil puede ser creado manual o automáticamente. Complementa el modelo tradicinal de control de acceso discrecional de Unix (DAC) proporcionando el control de acceso obligario (MAC). En definitiva, es similar a SELinux, aunque funcionan de maneras diferentes.
 
 ### ¿Qué es una partición?
+División presente en una sola unidad física de almacenamiento de datos. Por ejemplo, sobre un disco duro se pueden realizar varias particiones de modo que el resultado es similar a trabajar con varios discos duros. Cada uno de estos nuevos "discos", que en realidad son uno solo pero dividido en segmentos, será utilizado para instalar/almacenar programas y OS. Cada una de estas particiones tendrá su propio sistema de archivos y será independiente del resto de particiones.<br>
+Hay varios motivos por los cuales podrían usarse particiones. Por un lado está el hecho de guardar copias de seguridad de un sistema. Si el sistema se ve comprometido puedes restaurarlo con una copia de seguridad gracias a que esta se encuentra en otra partición diferente, por lo que no se ha visto comprometida por los errores del sistema que queremos reparar. También se recurre al uso de particiones para instalar OS, cuando se quiere probar nuevas distribuciones las cuales pueden ser inestables y causar daños en el sistema. Así pues, podemos encontrarnos con tres tipos de particiones:
+<ul>
+   <li>Partición primaria: divisiones primarias del disco que dependen de una tabla de particiones, y son las que detecta el ordenador al arrancar, por lo que es en ellas donde se instalan los OS. Puede haber un máximo de 4.</li>
+   <li>Particion extendida: ideada para poder tener mas de 4 particiones en un mismo disco, aunque en ella no se puede instalar un OS. Solo la podremos utilizar para almacenar datos. Solo puede haber una particion extendida, aunque dentro de ella podremos tener tantas particiones como queramos.</li>
+   <li>Particion logica: la que se hace dentro de una particion extendida.</li>
+</ul>
 
 ### ¿Qué es LVM?
+Software que permite realizar particiones en un disco mediante la creación de volúmenes lógicos. Gracias a LVM se pueden crear, aumentar, reducir y eliminar el espacio asignado a una partición. Mejora así mucha de las limitaciones presentes a la hora de utilizar una partición tradicional.
+LVM funciona mediante el uso de tres componentes:
+<ul>
+   <li>Volumen físico (PV): dispositivo de almacenamiento físico, como un disco duro.</li>
+   <li>Grupo de volúmenes (VG): formado por varios PV.</li>
+   <li>Volumen logico (LV): utilizados para crear las particiones a partir de los VG.</li>
+</ul>
 
 ### ¿Qué es el protocolo SSH?
 
