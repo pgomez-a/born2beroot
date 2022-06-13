@@ -1,7 +1,7 @@
 # born2beroot
 <img width="1311" alt="Born2BeRoot" src="https://user-images.githubusercontent.com/74931024/122046675-818f8600-cddf-11eb-9f48-653d52cda000.png">
 
-**If you want to learn more about IT topics, visit my website:** [**IA Notes**](https://ia-notes.com/)
+**If you want to learn more about IT topics, [I invite you to join my Patreon channel](https://www.patreon.com/pgomeza) and visit my website:** [**IA Notes**](https://ia-notes.com/)
 
 **Born2BeRoot** is made to allow us to learn more about the world of **virtualization**. Thanks to this project we will be able to configure a server hosted in a virtual machine. In this way, we will learn the benefits of using a virtual machine, although we will also see that its use is not always advisable.
 
